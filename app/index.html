@@ -17,33 +17,35 @@
 </head>
 <body>
 <div class="container">
-
+<!--
   <div class="panel panel-default">
     <div class="panel-body">
 
+
       <div class="btn-group" role="group">
-        <a class="btn btn-default" data-ui-sref="pokeList">Список</a>
-        <a class="btn btn-default" data-ui-sref="createNewPokemon">Добавить нового</a>
+        <a class="btn btn-default" data-ui-sref="home.pokeList" data-ui-active="active">Список</a>
+        <a class="btn btn-default" data-ui-sref="home.createNewPokemon" data-ui-active="active">Добавить нового</a>
       </div>
 
     </div>
   </div>
-
+-->
   <ui-view></ui-view>
 
 </div>
-
-
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="app.js"></script>
   <script src="view1/view1.js"></script>
   <script src="view2/view2.js"></script>
+  <script src="home/home.js"></script>
   <script src="PokemonDetail/PokemonDetailCtrl.js"></script>
+  <script src="PokemonDetail/PokemonEdit.js"></script>
   <script src="PokemonList/PokemonListCtrl.js"></script>
   <script src="CreatePokemon/CreatePokemonCtrl.js"></script>
   <script src="PokemonsService/PokemonsService.js"></script>

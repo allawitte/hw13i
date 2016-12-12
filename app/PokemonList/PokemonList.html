@@ -15,7 +15,9 @@
 </div>
 
 <div class="list-group">
-    <a ng-href="#/pokemons/{{singlePokemon.id }}" class="list-group-item"
+    <!--<a ng-href="#/pokemons/{{singlePokemon.id }}" class="list-group-item"-->
+    <!--<a ui-sref="detail{{singlePokemon.id }}" class="list-group-item"-->
+    <a ui-sref="detail({pokemonId: singlePokemon.id })" class="list-group-item"
        data-ng-repeat="singlePokemon in vm.pokemons | filter:vm.myQuery | orderBy: vm.myOrderProperty">
         <h4 class="list-group-item-heading">
             <span class="badge">{{singlePokemon.id }}</span>

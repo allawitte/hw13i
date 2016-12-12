@@ -1,0 +1,52 @@
+<form name="pokemonForm" novalidate>
+    <div class="form-group">
+        <label>Имя</label>
+        <input name="name" class="form-control" data-ng-model="vm.pokemon.name" type="text" placeholder="Имя"
+               required ng-minlength="3">
+        <div ng-messages="pokemonForm.name.$error" ng-if="pokemonForm.name.$touched">
+            <div ng-message="required" class="error">
+                Вы забыли ввести имя покемона
+            </div>
+            <div ng-message="minlength" class="error">
+                Имя должно быть не короче 3-х символов
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Вес</label>
+        <input name="weight" class="form-control" data-ng-model="vm.pokemon.weight" type="text" placeholder="Вес"
+               data-ng-pattern="/^(?:\d+(?:\.\d+)?)$/" required>
+
+        <div ng-messages="pokemonForm.weight.$error" ng-if="pokemonForm.weight.$touched">
+            <div ng-message="required" class="error">
+                Вы забыли вес покемона
+            </div>
+            <div ng-message="pattern" class="error">
+                Вес должен быть числом
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Рост</label>
+        <input name="height" class="form-control" data-ng-model="vm.pokemon.height" type="text" placeholder="Рост"
+               data-ng-pattern="/^(?:\d+(?:\.\d+)?)$/" required>
+
+        <div ng-messages="pokemonForm.height.$error" ng-if="pokemonForm.height.$touched">
+            <div ng-message="required" class="error">
+                Вы забыли рост покемона
+            </div>
+            <div ng-message="pattern" class="error">
+                Рост должен быть числом
+            </div>
+        </div>
+    </div>
+    <div class="checkbox">
+        <label>
+            <input type="checkbox">
+            Активен
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default" data-ng-click="setUpdate(vm.pokemon)"
+            data-ng-disabled="pokemonForm.$invalid">Сохранить
+    </button>
+</form>
